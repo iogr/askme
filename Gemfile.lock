@@ -154,7 +154,7 @@ DEPENDENCIES
   jquery-rails
   listen
   rails (~> 6.0.3.2)
-  sqlite3
+  sqlite3 (~> 1.4)
   web-console (~> 2.0)
 
 BUNDLED WITH
