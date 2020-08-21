@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ApplicationRecord::Base
   # Когда мы вызываем метод questions у экземпляра класса User, рельсы
   # поймут это как просьбу найти в базе все объекты класса Questions со
   # значением user_id равный user.id.
