@@ -1,11 +1,11 @@
 require 'openssl'
 
 class User < ApplicationRecord
-  # ITERATIONS = 20_000
-  # DIGEST = OpenSSL::Digest::SHA256.new
+  ITERATIONS = 20_000
+  DIGEST = OpenSSL::Digest::SHA256.new
   # Когда мы вызываем метод questions у экземпляра класса User, рельсы
   # поймут это как просьбу найти в базе все объекты класса Questions со
-  # значением user_id равный user.id.
+  # значением user_id раexitвный user.id.
   has_many :questions
 
   # username validations
