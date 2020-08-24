@@ -7,9 +7,7 @@ class Question < ActiveRecord::Base
   # который равен question.user_id.
   belongs_to :user
 
-  # Эта валидация препятствует созданию вопросов, у которых поле text пустое, объект не будет сохранен в базу.
-  validates :text, presence: true
-
+  validates :text, presence: true, length: { maximum: 255 }
   # Все коллбэки
 
   # Вызываем специальный метод и в виде символа передаём имя метода (его пишем сами),

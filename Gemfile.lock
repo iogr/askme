@@ -153,8 +153,9 @@ DEPENDENCIES
   byebug
   jquery-rails
   listen
+  nokogiri (~> 1.10.10)
   rails (~> 6.0.3.2)
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.4.2)
   web-console (~> 2.0)
 
 BUNDLED WITH
