@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   # username validations
 
+  before_validation :username_to_downcase
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A\w+\z/ }
 
@@ -83,4 +84,7 @@ class User < ApplicationRecord
     password_hash.unpack('H*')[0]
   end
 
+  def username_to_downcase
+    username.downcase! if username
+  end
 end
