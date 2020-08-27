@@ -15,7 +15,7 @@ class User < ApplicationRecord
   before_validation :username_to_downcase
   validates :username,
             length: { maximum: 40 },
-            format: { with: username_valid_mask }
+            format: { with: UsernameValidMask }
 
   # email validations
 
