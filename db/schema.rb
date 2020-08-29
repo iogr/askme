@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_08_20_190534) do
     t.string "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,4 +32,5 @@ ActiveRecord::Schema.define(version: 2020_08_20_190534) do
     t.string "avatar_url"
   end
 
+  add_foreign_key "questions", "users"
 end

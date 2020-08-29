@@ -5,7 +5,7 @@
   </h1>
 
   <div class="user-image-div">
-    <%# Рисуем аватарку пользователя
+    <%#  Рисуем аватарку пользователя %>
     <%= image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]' %>
   </div>
 
@@ -40,6 +40,8 @@
 
 <div class="column-3-4">
   <div class="user-questions buffer-both">
+    Всего задано: <%= @questions.size %>
+    <%= inflect_for_number(@questions.size, 'вопрос', 'вопроса', 'вопросов') %>
     <div class="questions-list">
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>

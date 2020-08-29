@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :questions
 
-  # get 'show' => 'users#show'
+  get 'show' => 'users#show'
 end
