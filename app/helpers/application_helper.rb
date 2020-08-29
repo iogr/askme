@@ -21,10 +21,4 @@ module ApplicationHelper
         voprosa
       end
   end
-
-  # user_input = STDIN.gets.to_i
-  # questions_inclination = inflect_for_number(user_input, 'вопрос', 'вопроса', 'вопросов')
-  # # puts "Вот вам #{user_input} #{questions_inclination}!"
-  # puts "#{questions_inclination}"
-
 end

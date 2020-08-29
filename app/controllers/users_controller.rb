@@ -31,7 +31,8 @@ class UsersController < ApplicationController
 
     @questions = [
       Question.new(text: 'Как дела?', created_at: Date.parse('27.03.2016')),
-      Question.new(text: 'Как дела?2', created_at: Date.parse('27.03.2016'))
+      Question.new(text: 'Как дела?2', created_at: Date.parse('27.03.2016')),
+      Question.new(text: 'Как дела?3', created_at: Date.parse('27.03.2016'))
     ]
 
     @new_question = Question.new
