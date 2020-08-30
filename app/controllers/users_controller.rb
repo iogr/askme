@@ -11,14 +11,17 @@ class UsersController < ApplicationController
         avatar_url: 'https://secure.gravatar.com/avatar/' \
         '71269686e0f757ddb4f73614f43ae445?s=100'
       ),
-      User.new(id: 2, name: 'Misha', username: 'aristofun')
+      User.new(id: 2, name: 'Misha', username: 'aristofun'),
+      User.new(id: 3, name: 'Missha', username: 'aristo00fun', avatar_url: 'avatar2.jpg')
     ]
   end
 
   def new
+    @users = User.all
   end
 
   def edit
+    @user = User.new
   end
 
   def show
