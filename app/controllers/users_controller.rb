@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :load_user, except: [:index, :create, :new]
+  before_action :authorize_user, except: [:index, :new, :create, :show]
 
   def index
     # Создаём массив из двух болванок пользователей. Вызываем метод # User.new, который создает модель, не записывая её в базу.
@@ -22,12 +23,16 @@ class UsersController < ApplicationController
   end
 
   def new
+    redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
+
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     # @user.save
+    redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
+
     if @user.save
       redirect_to root_url, notice: "User created"
     else
@@ -40,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find params[:id]
+    # @user = User.find params[:id]
 
     if @user.update(user_params)
       redirect_to user_path, notice: "Form is updated"
@@ -53,7 +58,7 @@ class UsersController < ApplicationController
     # @questions = @user.questions.order(created_at: :desc)
 
     # @new_question = @user.questions.build
-    @user = User.find params[:id]
+    # @user = User.find params[:id]
     # берём вопросы у найденного юзера
     @questions = @user.questions.order(created_at: :desc)
 
@@ -62,6 +67,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def authorize_user
+    reject_user unless @user == current_user
+  end
 
   def load_user
     @user ||= User.find params[:id]
