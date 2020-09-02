@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.7.1"
+
 gem 'nokogiri', '~> 1.10.10'
 gem 'rails', '~> 6.0.3.2'
 gem 'jquery-rails'
