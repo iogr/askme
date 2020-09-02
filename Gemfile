@@ -8,7 +8,7 @@ gem 'jquery-rails'
 
 
 group :production do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.4.2'
 end
 
 group :development, :test do
