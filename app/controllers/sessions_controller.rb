@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.authenticate(params[:email], params[:password])
 
     if @user.present?
-      session[:user_id] = @user.id
+      session[:user_id] = @user[:id]
       redirect_to root_url, notice: 'You are logged in'
     else
       flash.now.alert = 'Wrong email or password'
@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
     # Затигаем в сесси значение ключа :user_id
     session[:user_id] = nil
 
-    # Редиректим пользователя на главную с сообщением
-    redirect_to root_url, notice: 'Вы разлогинились! Приходите еще!'
+    redirect_to root_url, notice: 'Вы разлогинились!'
   end
 end

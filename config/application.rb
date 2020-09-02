@@ -32,16 +32,6 @@ module Askme
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    # config.generators do |g|
-    #   g.test_framework  nil #to skip test framework
-    # end
-    # config.time_zone = 'Moscow'
-    #
-    # # config.i18n.default_locale = :en
-
-    # config.i18n.locale = :ru
-    # config.i18n.fallbacks = [:en]
-
     # # todo >
 
     config.time_zone = 'Moscow'

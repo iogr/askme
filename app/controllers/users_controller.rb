@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :load_user, except: [:index, :create, :new]
   before_action :authorize_user, except: [:index, :new, :create, :show]
 
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
 
   def new
     redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
-
     @user = User.new
   end
 
@@ -61,6 +59,11 @@ class UsersController < ApplicationController
     # @user = User.find params[:id]
     # берём вопросы у найденного юзера
     @questions = @user.questions.order(created_at: :desc)
+    #todo
+    # @questions = @user.questions.sorted_desc
+    @questions_count = @questions.count
+    @answers_count = @questions.with_answers.count
+    @unanswered_count = @questions_count - @answers_count
 
     # Для формы нового вопроса создаём заготовку, вызывая build у результата вызова метода @user.questions.
     @new_question = @user.questions.build

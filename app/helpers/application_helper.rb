@@ -1,12 +1,18 @@
 module ApplicationHelper
-  # Этот метод возвращает ссылку на аватарку пользователя, если она у него есть.
-  # Или ссылку на дефолтную аватарку, которую положим в app/assets/images
   def user_avatar(user)
     if user.avatar_url.present?
       user.avatar_url
     else
       asset_path 'avatar.jpg'
     end
+  end
+
+  def question_inflect(questions_count)
+    inflect_for_number(questions_count, 'вопрос', 'вопроса', 'вопросов')
+  end
+
+  def answer_inflect(answers_count)
+    inflect_for_number(answers_count, 'ответ', 'ответа', 'ответов')
   end
 
   def inflect_for_number(number, vopros, voprosa, voprosov)
