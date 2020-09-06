@@ -7,15 +7,7 @@ module ApplicationHelper
     end
   end
 
-  # def question_inflect(questions_count)
-  #   inflect_for_number(questions_count, 'вопрос', 'вопроса', 'вопросов')
-  # end
-  #
-  # def answer_inflect(answers_count)
-  #   inflect_for_number(answers_count, 'ответ', 'ответа', 'ответов')
-  # end
-
-  def inflect_for_number(number, vopros, voprosa, voprosov)
+def inflect_for_number(number, vopros, voprosa, voprosov)
     number_to_string = number.to_s
     result =
       if number_to_string[-2] == '1' ||
