@@ -3,21 +3,6 @@ class UsersController < ApplicationController
   before_action :authorize_user, except: [:index, :new, :create, :show]
 
   def index
-    # Создаём массив из двух болванок пользователей. Вызываем метод # User.new, который создает модель, не записывая её в базу.
-    # У каждого юзера мы прописали id, чтобы сымитировать реальную
-    # # ситуацию – иначе не будет работать хелпер путей
-
-    # @users = [
-    #   User.new(
-    #     id: 1,
-    #     name: 'Vadim',
-    #     username: 'installero',
-    #     avatar_url: 'https://secure.gravatar.com/avatar/' \
-    #     '71269686e0f757ddb4f73614f43ae445?s=100'
-    #   ),
-    #   User.new(id: 2, name: 'Misha', username: 'aristofun'),
-    #   User.new(id: 3, name: 'Missha', username: 'aristo00fun', avatar_url: 'avatar2.jpg')
-    # ]
     @users = User.all
   end
 
@@ -31,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:user.id] = @user[:id]
+      session[:user_id] = @user.id
       redirect_to root_path, notice: 'Ok'
     else
       render :new
@@ -53,13 +38,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @questions = @user.questions.order(created_at: :desc)
-
-    # @new_question = @user.questions.build
-    # @user = User.find params[:id]
-    # берём вопросы у найденного юзера
     @questions = @user.questions.order(created_at: :desc)
-    #todo
     # @questions = @user.questions.sorted_desc
     @questions_count = @questions.count
     @answers_count = @questions.with_answers.count
