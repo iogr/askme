@@ -19,11 +19,23 @@ class ApplicationController < ActionController::Base
 
   # Метод контроллера, достающий текущего юзера из базы по данным аутентификации
   # в сессии.
+  # @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   def current_user
-    #ЗАПОМНИТЬ ПОСЛЕДОВАТЕЛЬНОСТЬ
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-    # @current_user ||= User.find_by(id: session[@user[:id]]) if session[@user[:id]]
+    @current_user ||= User.find_by(id: session[:user_id])
   end
+
+
+    # @current_user ||= User.find_by(session(@user.id)) if session(@user.id)
+    #  puts @user.id
+    # puts session[@user[:id]]
+    # if @user.id == @user[:id]
+    #   puts "even"
+    # else
+    #   puts "not even"
+    # end
+     # puts User.find_by(id: session[:user_id])
+    # @current_user ||= User.find_by(id: session[@user[:id]]) if session[@user[:id]]
+
 
   # Метод, который редиректит посетителя на главную с предупреждением о
   # нарушении доступа. Мы будем использовать этот метод, когда надо запретить
