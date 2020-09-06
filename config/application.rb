@@ -32,7 +32,7 @@ module Askme
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    # # todo >
+    # todo >
 
     config.time_zone = 'Moscow'
 

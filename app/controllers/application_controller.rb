@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   def current_user
     #ЗАПОМНИТЬ ПОСЛЕДОВАТЕЛЬНОСТЬ
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    # @current_user ||= User.find_by(id: session[@user[:id]]) if session[@user[:id]]
   end
 
   # Метод, который редиректит посетителя на главную с предупреждением о
