@@ -7,19 +7,6 @@ module ApplicationHelper
     end
   end
 
-def inflect_for_number(number, vopros, voprosa, voprosov)
-    number_to_string = number.to_s
-    result =
-      if number_to_string[-2] == '1' ||
-        [*'5'..'9', '0'].include?(number_to_string[-1])
-        voprosov
-      elsif number_to_string[-1] == '1'
-        vopros
-      else
-        voprosa
-      end
-  end
-
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
