@@ -10,6 +10,12 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
+//= require jquery-ui
+//= require jquery-colorpicker
+
+//= require jquery # Not included
+//= require jquery.minicolors
+
 $(function(){
     $('#ask-button').click(function(){
         $('#ask-form').slideToggle(300);

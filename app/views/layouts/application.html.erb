@@ -10,6 +10,16 @@
 </head>
 <body>
 <div class="header">
+  <div class="user-header text-center">
+    <style type="text/css">
+        .user-header {
+            background: #<%= if current_page?(user_path(current_user))
+            current_user.color.delete('#')
+             end %>;
+        }
+    </style>
+  </div>
+
   <div class="container">
 
     <div class="header-logo">
