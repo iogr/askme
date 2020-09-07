@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user.present?
       session[:user_id] = @user[:id]
-      redirect_to root_url, notice: 'You are logged in'
+      redirect_to root_path, notice: 'You are logged in'
     else
       flash.now.alert = 'Wrong email or password'
       render :new
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
     # Затигаем в сесси значение ключа :user_id
     session[:user_id] = nil
 
-    redirect_to root_url, notice: 'Вы разлогинились!'
+    redirect_to root_path, notice: 'Вы разлогинились!'
   end
 end
