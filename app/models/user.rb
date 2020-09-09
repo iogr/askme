@@ -5,18 +5,16 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
   EMAIL_VALID_MASK = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   USERNAME_VALID_MASK = /\A\w+\z/
+  # COLOR_VALID_MASK = /\A#(?:[0-9a-fA-F]{3}){1,2}\z/
 
   attr_accessor :password
 
   has_many :questions
   # has_one :color
-
   # username validations
 
   before_validation :username_to_downcase
   before_save :encrypt_password
-
-  validates :color, presence: false
 
   validates :username,
             presence: true,
@@ -34,6 +32,8 @@ class User < ApplicationRecord
             presence: true,
             confirmation: true,
             on: :create
+
+  validates :color, presence: false
 
   def self.authenticate(email, password)
     user = find_by(email: email)

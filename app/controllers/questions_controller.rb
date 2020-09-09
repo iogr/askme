@@ -1,11 +1,3 @@
-# (c) goodprogrammer.ru
-#
-# Контроллер, управляющий вопросами. Действия:
-#
-# 1. Редактирует вопрос
-# 2. Создает вопрос
-# 3. Удаляет вопрос
-#
 class QuestionsController < ApplicationController
   # Инициализируем объект вопрос для экшенов кроме :edit, :update, :destroy
   before_action :load_question, only: [:edit, :update, :destroy]
@@ -57,8 +49,6 @@ class QuestionsController < ApplicationController
     # Перед тем, как удалять вопрос, сохраним пользователя, чтобы знать, куда
     # редиректить после удаления.
     user = @question.user
-
-    # Удаляем вопрос
     @question.destroy
 
     # Отправляем пользователя на страницу адресата вопроса с сообщением

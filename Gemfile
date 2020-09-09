@@ -8,10 +8,9 @@ gem 'jquery-rails'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rails_12factor'
 
-gem 'jquery-ui-rails'
-gem 'jquery-colorpicker-rails'
-
-gem 'jquery-minicolors-rails'
+# gem 'jquery-ui-rails'
+# gem 'jquery-colorpicker-rails'
+# gem 'jquery-minicolors-rails'
 
 group :production do
   gem 'pg', '~> 0.21'
