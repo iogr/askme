@@ -42,6 +42,7 @@
         <%= f.label 'Выбор цвета профиля', class: 'form-label' %>
         <%= f.color_field :color, class: 'form-text-field form-palette' , value: @user.color%>
         </div>
+
         <%#= form-label @user do |f| %>
         <%#= form_for(@user) do |f| %>
           <%#= f.input :color, as: :minicolors %>
@@ -64,6 +65,11 @@
 
       <div class="form-action buffer-top">
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
+      </div>
+
+      <div class="form-field buffer-top">
+        <%#= link_to "Удалить @#{current_user.username}", user_path(current_user) %>
+        <%= link_to "Удалить @#{current_user.username}", user_path(current_user) %>
       </div>
     <% end %>
 

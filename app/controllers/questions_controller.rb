@@ -11,14 +11,17 @@ class QuestionsController < ApplicationController
   #
   # Перед этим действием сработает before_action :load_questions и в переменной
   # @question у нас будет лежать вопрос с нужным id равным params[:id].
+  # GET /question/1/edit
   def edit
   end
 
   # Действие create будет отзываться при POST-запросе по адресу /questions из
   # формы нового вопроса, которая находится в шаблоне на странице
   # /questions/edit
+  # POST /questions
   def create
     @question = Question.new(question_params)
+    @question.author = current_user
 
     if @question.save
       redirect_to user_path(@question.user), notice: 'Вопрос задан'
@@ -32,6 +35,7 @@ class QuestionsController < ApplicationController
   #
   # Перед этим действием сработает before_action :load_questions и в переменной
   # @question у нас будет лежать вопрос с нужным id равным params[:id].
+  # PATCH OR PUT question/1
   def update
     if @question.update(question_params)
       redirect_to user_path(@question.user), notice: 'Вопрос сохранен'
@@ -45,6 +49,7 @@ class QuestionsController < ApplicationController
   #
   # Перед этим действием сработает before_action :load_questions и в переменной
   # @question у нас будет лежать вопрос с нужным id равным params[:id].
+  # DELETE /questions/1
   def destroy
     # Перед тем, как удалять вопрос, сохраним пользователя, чтобы знать, куда
     # редиректить после удаления.
