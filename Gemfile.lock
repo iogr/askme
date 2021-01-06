@@ -173,7 +173,7 @@ DEPENDENCIES
   jquery-ui-rails
   listen
   nokogiri (~> 1.10.10)
-  pg (~> 0.21)
+  pg
   rails (~> 6.0.3.2)
   rails-i18n (~> 6.0.0)
   rails_12factor
