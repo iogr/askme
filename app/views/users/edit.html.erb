@@ -57,13 +57,11 @@
         <%= f.submit 'Сохранить', class: 'button button-dark button-small', data: { confirm: 'Вы уверены?' } %>
       </div>
 
-<!--      <%= link_to 'Delete', @rule, method: :delete, data: { confirm: 'Are you sure you want to delete this alert?' }-->
-      %>
-
       <div class="buffer-top">
-          <%= link_to "Удалить @#{current_user.username}", user_path(@user),
+          <%= link_to "Удалить @#{current_user.username}", @user,
                     method: :delete,
-                    data: { confirm: 'Вы уверены?' } %>
+                      class: 'button button-dark button-small',
+                      data: { confirm: 'Вы уверены?' } %>
       </div>
     <% end %>
 
