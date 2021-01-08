@@ -46,11 +46,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = @question.user
-    # @user.destroy
-    @question.destroy
-    # redirect_to root_path, notice: 'User is deleted'
-    redirect_to user_path(@user), notice: 'User is deleted'
+    # user = @question.user
+    @user.destroy
+    # @question.destroy
+    redirect_to root_path, notice: 'User is deleted'
+    # redirect_to user_path(@user), notice: 'User is deleted'
   end
 
   private
