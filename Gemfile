@@ -8,9 +8,13 @@ gem 'jquery-rails'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rails_12factor'
 
+gem 'webpacker', '~> 4.0'
+
 gem 'jquery-ui-rails'
 gem 'jquery-colorpicker-rails'
 gem 'jquery-minicolors-rails'
+
+# gem 'bootsnap', '>= 1.4.2', require: false
 
 group :production do
   gem 'pg'

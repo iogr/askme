@@ -37,21 +37,11 @@
         <%= f.label 'URL вашей аватарки', class: 'form-label' %>
         <%= f.text_field :avatar_url, class: 'form-text-field' %>
       </div>
-<%#todo %>
+
       <div class="form-field">
         <%= f.label 'Выбор цвета профиля', class: 'form-label' %>
         <%= f.color_field :color, class: 'form-text-field form-palette' , value: @user.color%>
-        </div>
-
-        <%#= form-label @user do |f| %>
-        <%#= form_for(@user) do |f| %>
-          <%#= f.input :color, as: :minicolors %>
-        <%# end %>
-<!--      </div>-->
-
-<!--      <div class="buffer-top-large buffer-bottom">-->
-<!--        Если не хотите менять пароль — оставьте эти поля пустыми!-->
-<!--      </div>-->
+      </div>
 
       <div class="form-field">
         <%= f.label :password, class: 'form-label' %>
@@ -64,12 +54,16 @@
       </div>
 
       <div class="form-action buffer-top">
-        <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
+        <%= f.submit 'Сохранить', class: 'button button-dark button-small', data: { confirm: 'Вы уверены?' } %>
       </div>
 
-      <div class="form-field buffer-top">
-        <%#= link_to "Удалить @#{current_user.username}", user_path(current_user) %>
-        <%= link_to "Удалить @#{current_user.username}", user_path(current_user) %>
+<!--      <%= link_to 'Delete', @rule, method: :delete, data: { confirm: 'Are you sure you want to delete this alert?' }-->
+      %>
+
+      <div class="buffer-top">
+          <%= link_to "Удалить @#{current_user.username}", user_path(@user),
+                    method: :delete,
+                    data: { confirm: 'Вы уверены?' } %>
       </div>
     <% end %>
 
