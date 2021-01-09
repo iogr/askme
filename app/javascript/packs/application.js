@@ -10,7 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 
-import 'bootstrap/dist/js/bootstrap'
+// import 'bootstrap/dist/js/bootstrap'
 
 $(function(){
     $('#ask-button').click(function(){
