@@ -5,7 +5,7 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
   EMAIL_VALID_MASK = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   USERNAME_VALID_MASK = /\A\w+\z/
-  COLOR_VALID_MASK = /\A#(?:[0-9a-fA-F]{3}){1,2}\z/
+  COLOR_VALID_MASK = /\A#(\h{3}){1,2}\z/
 
   attr_accessor :password
 
