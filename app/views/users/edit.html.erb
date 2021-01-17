@@ -40,7 +40,7 @@
 
       <div class="form-field">
         <%= f.label 'Выбор цвета профиля', class: 'form-label' %>
-        <%= f.color_field :color, class: 'form-text-field form-palette' , value: @user.color%>
+        <%= f.color_field :color, class: 'form-text-field form-palette' , value: @user.color %>
       </div>
 
       <div class="form-field">
@@ -64,9 +64,5 @@
                       data: { confirm: 'Вы уверены?' } %>
       </div>
     <% end %>
-
-    <%# Подробнее про помощники для создания форм: %>
-    <%# http://guides.rubyonrails.org/form_helpers.html %>
   </div>
-  <canvas class="container" id="myCanvas"></canvas>
 </div>
