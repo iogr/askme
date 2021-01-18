@@ -1,5 +1,6 @@
 class AddAuthorToQuestions < ActiveRecord::Migration[6.0]
   def change
-    add_reference :questions, :author, index: true, foreign_key: { to_table: :users }
+    add_column :questions, :author_id, :integer
+    add_index :questions, :author_id
   end
 end
