@@ -46,13 +46,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # user = @question.user
-    # @user.destroy
     User.destroy(params[:id])
-    # User.find(params[:id]).delete
-    # @question.destroy
     redirect_to root_path, notice: 'User is deleted'
-    # redirect_to user_path(@user), notice: 'User is deleted'
   end
 
   private
