@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   # Инициализируем объект вопрос для экшенов кроме :edit, :update, :destroy
+  # before_action :load_question, only: [:show, :edit, :update, :destroy]
   before_action :load_question, only: [:show, :edit, :update, :destroy]
 
   # Проверяем имеет ли юзер доступ к экшену для всей дествий, кроме задавания
