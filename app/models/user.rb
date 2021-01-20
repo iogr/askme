@@ -32,7 +32,7 @@ class User < ApplicationRecord
             on: :create
 
   # account color validation
-  validates :color, format: { with: COLOR_VALID_MASK }, on: :update
+  validates :color, format: { with: COLOR_VALID_MASK }
 
   def self.authenticate(email, password)
     user = find_by(email: email)
