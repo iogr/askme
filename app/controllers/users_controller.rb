@@ -46,7 +46,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # User.destroy(current_user)
     @user.destroy
     redirect_to root_path, notice: 'User is deleted'
   end
