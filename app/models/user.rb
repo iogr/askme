@@ -66,6 +66,6 @@ class User < ApplicationRecord
   end
 
   def username_to_downcase
-    username.downcase! if username
+    username&.downcase!
   end
 end

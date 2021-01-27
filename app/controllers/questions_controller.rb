@@ -15,6 +15,8 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def show
+  end
   # Действие create будет отзываться при POST-запросе по адресу /questions из
   # формы нового вопроса, которая находится в шаблоне на странице
   # /questions/edit
