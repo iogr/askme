@@ -33,6 +33,15 @@ ru:
     to_return: 'Вернуться'
     delete_profile: 'Удалить профиль'
 
+  activerecord:
+    attributes:
+      user:
+        name: 'Ваше имя'
+        avatar_url: 'URL вашей аватарки'
+        color: 'Цвет фона'
+        password: 'Пароль'
+        password_confirmation: 'Пароль еще раз'
+
   general:
     questions:
       are_you_sure: 'Вы уверены?'
