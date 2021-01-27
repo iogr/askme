@@ -1,7 +1,6 @@
 <%# Страница редактирования пользователя %>
 <div class="container content-wrapper buffer-both">
-  <h1 class="title-medium">Править профиль</h1>
-
+  <h1 class="title-medium"><%= t('general.header.change_profile') %></h1>
   <div class="column-1-2">
     <%# С помощью специального хелпера form_for мы делаем тег <form ...> %>
     <%# с нужными аттрибутами, после этого в переменной f будет специальный %>
@@ -29,17 +28,17 @@
 
       <%# Поступаем аналогично для других полей %>
       <div class="form-field">
-        <%= f.label 'Ваше имя', class: 'form-label' %>
+        <%= f.label t('views.users.your_name'), class: 'form-label' %>
         <%= f.text_field :name, class: 'form-text-field' %>
       </div>
 
       <div class="form-field">
-        <%= f.label 'URL вашей аватарки', class: 'form-label' %>
+        <%= f.label t('views.users.your_avatar_url'), class: 'form-label' %>
         <%= f.text_field :avatar_url, class: 'form-text-field' %>
       </div>
 
       <div class="form-field">
-        <%= f.label 'Выбор цвета профиля', class: 'form-label' %>
+        <%= f.label t('views.users.bg_color'), class: 'form-label' %>
         <%= f.color_field :color, class: 'form-text-field form-palette' , value: @user.color %>
       </div>
 
@@ -54,14 +53,14 @@
       </div>
 
       <div class="form-action buffer-top">
-        <%= f.submit 'Сохранить', class: 'button button-dark button-small', data: { confirm: 'Вы уверены?' } %>
+        <%= f.submit t('general.questions.save'), class: 'button button-dark button-small', data: { confirm: t('general.questions.are_you_sure') } %>
       </div>
 
       <div class="buffer-top">
-          <%= link_to "Удалить @#{current_user.username}", @user,
+        <%= link_to t('links.delete_profile') + " @#{current_user.username}?", @user,
                     method: :delete,
-                      class: 'button button-dark button-small',
-                      data: { confirm: 'Вы уверены?' } %>
+                    class: 'button button-danger button-small',
+                    data: { confirm: t('general.questions.are_you_sure') } %>
       </div>
     <% end %>
   </div>

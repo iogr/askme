@@ -17,3 +17,25 @@ ru:
     few: 'без ответа'
     many: 'без ответа'
     other: 'без ответа'
+
+  views:
+    users:
+      your_name: 'Ваше имя'
+      your_avatar_url: 'URL вашей аватарки'
+      bg_color: 'Цвет фона'
+      affirm_password: 'Если не хотите менять пароль — оставьте эти поля пустыми!'
+
+  links:
+    register: 'Зарегистрироваться'
+    sign_in: 'Войти'
+    log_off: 'Выйти'
+    saved: 'Сохранить'
+    to_return: 'Вернуться'
+    delete_profile: 'Удалить профиль'
+
+  general:
+    questions:
+      are_you_sure: 'Вы уверены?'
+      save: 'Сохранить'
+    header:
+      change_profile: 'Настроить профиль'
