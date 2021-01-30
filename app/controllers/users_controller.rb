@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :load_user, except: [:index, :create, :new]
   before_action :authorize_user, except: [:index, :new, :create, :show, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :url_not_found
+
   def index
     @users = User.all
   end
@@ -63,5 +65,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation,
                                  :name, :username, :avatar_url, :color)
+  end
+
+  def url_not_found
+    reject_user
   end
 end
