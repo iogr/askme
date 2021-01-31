@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, except: [:index, :create, :new]
-  before_action :authorize_user, except: [:index, :new, :create, :show, :destroy]
+  before_action :authorize_user, except: [:index, :new, :create, :show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :url_not_found
 
