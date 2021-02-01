@@ -7,18 +7,18 @@ class Question < ApplicationRecord
 
   validates :text, presence: true, length: { maximum: 255 }
 
-  after_commit :update_tags, on: [:create, :update]
+  after_save_commit :update_tags
 
   scope :sorted_desc, -> { order(created_at: :desc) }
   scope :with_answers, -> { where.not(answer: nil) }
 
   private
 
-  def update_tags
-    tag_questions.clear
-    "#{text} #{answer}".downcase.scan(Tag::TAG_REGEX).uniq.each do |tag|
-      tags << Tag.find_or_create_by(name: tag)
-    end
+  def update_text
+    self.tags =
+      "#{text} #{answer}".downcase.scan(Tag::TAG_REGEX).uniq.map do |tag|
+        Tag.find_or_create_by(name: tag.delete('#'))
+      end
   end
 end
 
