@@ -58,6 +58,8 @@ class UsersController < ApplicationController
 
   def load_user
     @user ||= User.find params[:id]
+  rescue ActiveRecord::RecordNotFound
+    route_not_found
   end
 
   def user_params
