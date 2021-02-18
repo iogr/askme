@@ -93,6 +93,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (1.2.3)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   byebug
   jquery-rails
   listen
+  pg
   pry-rails
   rails (~> 6.0.3.2)
   rails-i18n (~> 6.0.0)
