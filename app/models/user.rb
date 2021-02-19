@@ -36,7 +36,7 @@ class User < ApplicationRecord
   validates :color, format: { with: COLOR_VALID_MASK }
 
   def self.authenticate(email, password)
-    user = find_by(email: email)
+      user = find_by(email: email)
 
     return nil unless user.present?
     hashed_password = User.hash_to_string(

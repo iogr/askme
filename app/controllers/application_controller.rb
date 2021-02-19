@@ -11,10 +11,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def route_not_found
-    render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
-  end
-
   private
 
   def current_user
